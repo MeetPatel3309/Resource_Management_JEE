@@ -1,0 +1,48 @@
+@charset "UTF-8";
+body {
+	background-color: #f1f1f1;
+	font-family: Arial, sans-serif;
+}
+
+h1 {
+	text-align: center;
+	color: #333;
+	margin-top: 60px;
+	border: 1px solid black;
+	padding: 5px;
+}
+
+.buttons-container {
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+}
+
+.add-btn, .view-btn {
+	margin-right: 10px;
+	padding: 12px;
+	background-color: #007bff;
+	color: #ffffff;
+	font-size: 16px;
+	font-weight: bold;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.add-btn:hover, .view-btn:hover {
+	background-color: #0056b3;
+}
+
+.view-btn1 {
+	background-color: #28a745;
+}
+
+.view-btn2 {
+	background-color: #dc3545;
+}
+
+.view-btn:hover {
+	opacity: 0.8;
+}

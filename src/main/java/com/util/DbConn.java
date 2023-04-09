@@ -14,7 +14,7 @@ public class DbConn {
 //				Class.forName("com.mysql.jdbc.Driver");
 				Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 //				con = DriverManager.getConnection("jdbc:mysql://localhost:3306/meet", "root", "root");
-				con = DriverManager.getConnection("jdbc:sqlserver://localhost:58896;DatabaseName=ROYAL;trustServerCertificate=true;", "sa","root");			
+				con = DriverManager.getConnection("jdbc:sqlserver://localhost:58896;DatabaseName=RESC_MNG_DB;trustServerCertificate=true;", "sa","root");			
 				 		
 				
 			} catch (ClassNotFoundException e) {
