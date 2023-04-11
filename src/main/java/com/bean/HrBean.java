@@ -2,10 +2,19 @@ package com.bean;
 
 public class HrBean {
 
+	private Integer hrid;
 	private String name;
 	private String email;
 	private String password;
 	private String mobileNo;
+
+	public Integer getHrid() {
+		return hrid;
+	}
+
+	public void setHrid(Integer hrid) {
+		this.hrid = hrid;
+	}
 
 	public void setName(String name) {
 		this.name = name;

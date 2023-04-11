@@ -2,7 +2,9 @@ package com.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import com.bean.HrBean;
 import com.util.DbConn;
@@ -44,6 +46,99 @@ public class HrDAO {
 			}
 		}
 		
+	}
+
+	public ArrayList<HrBean> getAllHr() {
+		
+		ArrayList<HrBean> list = new ArrayList<>();
+		Connection con = null;
+		
+		try 
+		{
+			con = DbConn.getConnection();
+			PreparedStatement ps = con.prepareStatement("select * from HrData");
+			
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next())
+			{
+				HrBean bean = new HrBean();
+				
+				bean.setHrid(rs.getInt("hrid"));
+				bean.setName(rs.getString("name"));
+				bean.setEmail(rs.getString("email"));
+				bean.setPassword(rs.getString("password"));
+				bean.setMobileNo(rs.getString("mobileNo"));
+				
+				list.add(bean);
+			}
+		} 
+		catch (SQLException e) 
+		{
+			e.printStackTrace();
+		}
+		finally 
+		{
+			try 
+			{
+				con.close();
+			} 
+			catch (SQLException e) 
+			{
+				e.printStackTrace();
+			}
+		}
+		return list;
+	}
+
+	public HrBean hrAuthentication(String email, String password) {
+		
+		
+		
+		
+		HrBean bean = null;
+		Connection con = null;
+	
+		try {
+			
+			con = DbConn.getConnection();
+			PreparedStatement ps = con.prepareStatement("SELECT  * FROM HrData WHERE email=? AND password=?");
+			
+			ps.setString(1, email);
+			ps.setString(2, password);
+			
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next())
+			{
+				bean = new HrBean();
+				
+				bean.setName(rs.getString("name"));
+				bean.setEmail(rs.getString("email"));
+				bean.setPassword(rs.getString("password"));
+				bean.setMobileNo(rs.getString("mobileNo"));
+				
+			}
+			
+		} 
+		catch (SQLException e) 
+		{
+			e.printStackTrace();
+		}
+		finally 
+		{
+			try 
+			{
+				con.close();
+			} 
+			catch (SQLException e) 
+			{
+				e.printStackTrace();
+			}
+		}
+		
+		
+		return bean;
 	}
 
 

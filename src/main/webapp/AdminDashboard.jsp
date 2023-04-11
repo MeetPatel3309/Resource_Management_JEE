@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Admin Dashboard</title>
 
-<link href="assets/css/AdminDashboard.css" rel="stylesheet" type="text/css">
+<link href="assets/css/Dashboard.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<h1>Admin Dashboard</h1>
@@ -17,7 +17,7 @@
 		</a>
 	</div>
 	<div class="buttons-container">
-		<a href="#">
+		<a href="ListHr">
 			<button class="view-btn view-btn1">View HR List</button>
 		</a> <a href="#">
 			<button class="view-btn view-btn2">View Resource</button>

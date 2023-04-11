@@ -1,4 +1,4 @@
-package com.controller;
+package com.filter;
 
 import java.io.IOException;
 
@@ -31,7 +31,7 @@ public class HRRegistration_Filter implements Filter {
 		String name = req.getParameter("name");
 		String email = req.getParameter("email");
 		String password = req.getParameter("password");
-		String mobile = req.getParameter("mobile");
+		String mobileNo = req.getParameter("mobileNo");
 		
 		boolean isError = false;
 		
@@ -113,7 +113,7 @@ public class HRRegistration_Filter implements Filter {
 		{
 			req.setAttribute("nameValue", name);
 			req.setAttribute("emailValue", email);
-			req.setAttribute("mobileValue", mobile);
+			req.setAttribute("mobileValue", mobileNo);
 					
 			req.getRequestDispatcher("HRRegistration.jsp").forward(req, resp);
 		}

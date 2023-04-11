@@ -11,12 +11,16 @@
 
  <div class="login-container">
     <h1>Hr Login</h1>
-    <form class="login-form" action="#" method="post">
+    <form class="login-form" action="HrAuthentication" method="post">
       <input type="email" id="email" name="email" placeholder="Email Address">
       <input type="password" id="password" name="password" placeholder="Password">
       <input type="submit" value="Login">
     </form>
   </div>
-
+  
+ <div class="error">
+	  ${error}
+ </div>
+ 
 </body>
 </html>
