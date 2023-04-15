@@ -20,6 +20,9 @@
                     <th>Email</th>
                     <th>Password</th>
                     <th>Mobile Number</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                    
                 </tr>
             </thead>
             <tbody>
@@ -31,6 +34,9 @@
                     <td>${bean.email }</td>
                     <td>${bean.password }</td>
                     <td>${bean.mobileNo }</td>
+                    <td> <a href="EditHr?hrid=${bean.hrid}"> <button>Edit</button> </a> </td>
+                    <td> <a href="DeleteHr?hrid=${bean.hrid}"> <button>Delete</button> </a> </td>
+                    
                 </tr>
                 
                 </c:forEach>

@@ -141,5 +141,36 @@ public class HrDAO {
 		return bean;
 	}
 
+	public void deletehr(Integer hrid) 
+	{
+		Connection con = null;
+		
+		try 
+		{
+			con = DbConn.getConnection();
+			PreparedStatement ps = con.prepareStatement("Delete from HrData WHERE hrid = ?");
+		
+			ps.setInt(1, hrid);
+			
+			int rowsAffected = ps.executeUpdate();
+			
+		} 
+		catch (SQLException e) 
+		{
+			e.printStackTrace();
+		}
+		finally 
+		{
+			try 
+			{
+				con.close();
+			} 
+			catch (SQLException e) 
+			{
+				e.printStackTrace();
+			}
+		}
+	}
+
 
 }
